@@ -59,7 +59,7 @@ public class Assignment2 {
         //write your code here
         double tax = 0.0;
         if (employee.salary <= 8900)
-            tax = employee.salary * 6.2/ 100;
+            tax = employee.salary * 12 * 6.2/ 100;
         else
             tax = 106800 * 6.2 / 100;
         System.out.println("Employee's social security tax is : " + tax);
