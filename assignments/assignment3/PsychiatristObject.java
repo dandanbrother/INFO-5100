@@ -37,6 +37,7 @@ public class PsychiatristObject {
      */
 
     public static String reverse(String string) {
+    	if (string == null || string.equals("")) return "";
         String[] words = string.trim().split("\\s++");
         StringBuilder stringBuilder = new StringBuilder();
         stringBuilder.append(words[words.length - 1]);
