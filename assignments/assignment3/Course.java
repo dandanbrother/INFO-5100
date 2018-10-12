@@ -21,11 +21,7 @@ public class Course {
     }
 
     public Student[] getStudents() {
-        Student[] cur = new Student[numberOfStudent];
-        for (int i = 0; i < numberOfStudent; i++) {
-            cur[i] = students[i];
-        }
-        return cur;
+        return students;
     }
 
     public boolean isFull() { return numberOfStudent == MAX_NUMBER; }
