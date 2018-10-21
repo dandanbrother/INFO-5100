@@ -36,10 +36,6 @@ public class Checkout {
 
     public String toString() {
         StringBuilder stringBuilder = new StringBuilder();
-//        stringBuilder.append("Number of items: ").append(list.size()).append("\n\n");
-//        stringBuilder.append("Total cost: ").append(totalCost()).append("\n\n");
-//        stringBuilder.append("Total tax: ").append(totalTax()).append("\n\n");
-//        stringBuilder.append("Cost + Tax : ").append(totalTax()).append(totalCost()).append("\n\n");
         for (int i = 0; i < (DessertShoppe.displayWidth - DessertShoppe.shopName.length())/2; i++)
             stringBuilder.append(" ");
         stringBuilder.append(DessertShoppe.shopName).append("\n");
@@ -93,5 +89,45 @@ public class Checkout {
         System.out.println("\nTotal tax: " + checkout.totalTax() + "\n");
         System.out.println("\nCost + Tax: " + (checkout.totalCost() + checkout.totalTax()) + "\n");
         System.out.println(checkout);
+    }
+
+    
+	/**
+     * Given a matrix of m x n elements (m rows, n columns), return all elements of the matrix in spiral order.
+     */
+    public List<Integer> spiralOrder(int[][] matrix) {
+        List<Integer> res = new LinkedList<>();
+        if (matrix == null || matrix.length == 0) return res;
+        int n = matrix.length, m = matrix[0].length;
+        int rowBegin = 0, colBegin = 0, rowEnd = n-1, colEnd = m-1;  //width of row and column
+        while (rowBegin <= rowEnd && colBegin <= colEnd) {
+            //right
+            for (int i = colBegin; i <= colEnd; i++) {
+                res.add(matrix[rowBegin][i]);
+            }
+            rowBegin++;
+            //down
+            for (int i = rowBegin; i <= rowEnd; i++) {
+                res.add(matrix[i][colEnd]);
+            }
+            colEnd--;
+            //left
+            if (rowBegin <= rowEnd) {
+                for (int i = colEnd; i >= colBegin; i--) {
+                    res.add(matrix[rowEnd][i]);
+                }
+                rowEnd--;
+            }
+
+            //up
+            if (colBegin <= colEnd) {
+                for (int i = rowEnd; i >= rowBegin; i--) {
+                    res.add(matrix[i][colBegin]);
+                }
+                colBegin++;
+            }
+
+        }
+        return res;
     }
 }
