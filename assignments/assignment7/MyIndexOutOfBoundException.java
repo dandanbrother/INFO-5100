@@ -9,7 +9,7 @@ import java.util.*;
 /**
  * 1. MyIndexOutOfBoundException
  */
-public class MyIndexOutOfBoundException extends IndexOutOfBoundsException {
+public class MyIndexOutOfBoundException extends ArrayIndexOutOfBoundsException {
 
     private int lowerBound;
     private int upperBound;
@@ -30,15 +30,16 @@ public class MyIndexOutOfBoundException extends IndexOutOfBoundsException {
 
     public static void main(String[] args) throws MyIndexOutOfBoundException {
         // 1
-//        int[] a = {1,2,3,4};
-//        try {
-//            for (int i = 0; i < 10; i++) {
-//                if (i >= a.length)
-//                    throw new MyIndexOutOfBoundException(0, a.length-1, i);
-//            }
-//        } finally {
-//            System.out.println("Finally");
-//        }
+        int[] t = {1,2,3,4};
+        try {
+            for (int i = 0; i < 10; i++) {
+                if (i >= t.length)
+                    throw new MyIndexOutOfBoundException(0, t.length-1, i);
+                System.out.println(t[i]);
+            }
+        } catch (MyIndexOutOfBoundException e) {
+            System.out.println("Catch e" + e);
+        }
 
         // 4
         List<Interval> list = new ArrayList<>();
@@ -49,7 +50,7 @@ public class MyIndexOutOfBoundException extends IndexOutOfBoundsException {
         int[] a = {1,3};
         int[] b = {2};
         System.out.println(findMedianSortedArrays(a,b));
-//        merge(list);
+        merge(list);
     }
 
 
