@@ -47,8 +47,8 @@ public class MyIndexOutOfBoundException extends ArrayIndexOutOfBoundsException {
         list.add(new Interval(2,4));
         list.add(new Interval(5,7));
         list.add(new Interval(6,8));
-        int[] a = {1,3};
-        int[] b = {2};
+        int[] a = {1,2,3};
+        int[] b = {0};
         System.out.println(findMedianSortedArrays(a,b));
         merge(list);
     }
@@ -76,8 +76,18 @@ public class MyIndexOutOfBoundException extends ArrayIndexOutOfBoundsException {
     /**
      * 3. merger interval
      */
+    public static class Interval{
+        public int start;
+        public int end;
+
+        public Interval(int start, int end) {
+            this.start = start;
+            this.end = end;
+        }
+    }
     public static List<Interval> merge(List<Interval> intervals) {
         // add your code here
+        if (intervals == null || intervals.size() == 0) return new ArrayList<>();
         Collections.sort(intervals, Comparator.comparingInt(t -> t.start));
         List<Interval> res = new LinkedList<>();
         if (intervals.size() == 0) return res;
@@ -145,18 +155,10 @@ public class MyIndexOutOfBoundException extends ArrayIndexOutOfBoundsException {
     public static double median(int[] nums) {
         if (nums.length == 0) return 0;
         if (nums.length % 2 == 1)
-            return nums[(nums.length+1) / 2];
+            return nums[nums.length / 2];
         else
             return (double) (nums[nums.length/2] + nums[nums.length/2+1])/2;
     }
 }
 
-class Interval {
-    public int start;
-    public int end;
 
-    public Interval(int start, int end) {
-        this.start = start;
-        this.end = end;
-    }
-}

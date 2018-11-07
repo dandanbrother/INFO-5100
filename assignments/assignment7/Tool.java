@@ -12,58 +12,63 @@ public class Tool {
     public void setStrength(int strength) {
         this.strength = strength;
     }
-}
 
-class Rock extends Tool {
-
-    public Rock(int strength) {
-        super(strength, 'r');
+    public int getStrength() {
+        return strength;
     }
 
-    public boolean fight(Tool tool) {
-        if (tool instanceof Paper)
-            return this.strength/2 > tool.strength;
-        else if (tool instanceof Scissors)
-            return this.strength*2 > tool.strength;
-        return false;
-    }
-}
+    public class Rock extends Tool {
 
-class Paper extends Tool {
+        public Rock(int strength) {
+            super(strength, 'r');
+        }
 
-    public Paper(int strength) {
-        super(strength, 'p');
-    }
-
-    public boolean fight(Tool tool) {
-        if (tool instanceof Rock)
-            return this.strength*2 > tool.strength;
-        else if (tool instanceof Scissors)
-            return this.strength/2 > tool.strength;
-        return false;
-    }
-}
-
-class Scissors extends Tool {
-
-    public Scissors(int strength) {
-        super(strength, 's');
+        public boolean fight(Tool tool) {
+            if (tool instanceof Paper)
+                return (this.strength+1)/2 > tool.strength;
+            else if (tool instanceof Scissors)
+                return this.strength*2 > tool.strength;
+            return false;
+        }
     }
 
-    public boolean fight(Tool tool) {
-        if (tool instanceof Paper)
-            return this.strength*2 > tool.strength;
-        else if (tool instanceof Rock)
-            return this.strength/2 > tool.strength;
-        return false;
+    public class Paper extends Tool {
+
+        public Paper(int strength) {
+            super(strength, 'p');
+        }
+
+        public boolean fight(Tool tool) {
+            if (tool instanceof Rock)
+                return this.strength*2 > tool.strength;
+            else if (tool instanceof Scissors)
+                return (this.strength+1)/2 > tool.strength;
+            return false;
+        }
+    }
+
+    public class Scissors extends Tool {
+
+        public Scissors(int strength) {
+            super(strength, 's');
+        }
+
+        public boolean fight(Tool tool) {
+            if (tool instanceof Paper)
+                return this.strength*2 > tool.strength;
+            else if (tool instanceof Rock)
+                return (this.strength+1)/2 > tool.strength;
+            return false;
+        }
     }
 }
 
 class RockPaperScissorsGame{
     public static void main(String args[]){
-        Scissors s = new Scissors(5);
-        Paper p = new Paper(7);
-        Rock r = new Rock(15);
+        Tool t = new Tool(0,'*');
+        Tool.Scissors s = t.new Scissors(5);
+        Tool.Paper p = t.new Paper(7);
+        Tool.Rock r = t.new Rock(15);
         System.out.println(s.fight(p) + " , "+ p.fight(s) );
         System.out.println(p.fight(r) + " , "+ r.fight(p) );
         System.out.println(r.fight(s) + " , "+ s.fight(r) );
