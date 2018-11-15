@@ -6,7 +6,7 @@
 
 
 
-#Dealer
+# Dealer
 
 | Member Name | Type                 | Description                 |
 | ----------- | -------------------- | --------------------------- |
@@ -20,7 +20,7 @@
 
 
 
-##Address
+## Address
 
 **Address is a inner class of Dealer Class**
 
@@ -36,7 +36,7 @@ Methods : // todo
 
 
 
-#Vehicle
+# Vehicle
 
 | Member Name   | Type                      | Description                                   |
 | ------------- | ------------------------- | --------------------------------------------- |
@@ -59,7 +59,7 @@ Methods : // todo
 
 
 
-##BodyType
+## BodyType
 
  **a enum class, only contains 3 values (VAN, SUV, Jeep).**
 
