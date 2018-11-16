@@ -1,9 +1,9 @@
-package dao;
+package dto;
 
 import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Special implements Serializable {
+public class Special {
     private String id;
     private String startDate;
     private String endDate;
@@ -11,9 +11,8 @@ public class Special implements Serializable {
     private String description;
     private String disclaimer;
     private String value;
-    private VehicleCriterion criterion;
 
-    public Special(String id, String startDate, String endDate, String title, String description, String disclaimer, String value, VehicleCriterion criterion) {
+    public Special(String id, String startDate, String endDate, String title, String description, String disclaimer, String value) {
         this.id = id;
         this.startDate = startDate;
         this.endDate = endDate;
@@ -21,7 +20,6 @@ public class Special implements Serializable {
         this.description = description;
         this.disclaimer = disclaimer;
         this.value = value;
-        this.criterion = criterion;
     }
 
     public String getId() {
@@ -74,14 +72,6 @@ public class Special implements Serializable {
 
     public void setValue(String value) {
         this.value = value;
-    }
-
-    public VehicleCriterion getCriterion() {
-        return criterion;
-    }
-
-    public void setCriterion(VehicleCriterion criterion) {
-        this.criterion = criterion;
     }
 
     // ------------ VehicleCriterion Class ----------------------------------------

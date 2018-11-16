@@ -8,13 +8,11 @@
 
 # Dealer
 
-| Member Name | Type                 | Description                 |
-| ----------- | -------------------- | --------------------------- |
-| id          | String               | unique id of a dealer       |
-| name        | String               | name of a dealer            |
-| address     | Address              | address of a dealer         |
-| vehicles    | ArrayList\<Vehicle\> | all vehicles a dealer owns  |
-| specials    | ArrayList\<Special\> | all special a dealer offers |
+| Member Name | Type    | Description           |
+| ----------- | ------- | --------------------- |
+| id          | String  | unique id of a dealer |
+| name        | String  | name of a dealer      |
+| address     | Address | address of a dealer   |
 
 ​       Methods : // todo
 
@@ -38,22 +36,20 @@ Methods : // todo
 
 # Vehicle
 
-| Member Name   | Type                      | Description                                   |
-| ------------- | ------------------------- | --------------------------------------------- |
-| id            | String                    | unique id of a vehicle                        |
-| dealerName    | String                    | name of a vehicle's dealer                    |
-| year          | String                    | year of a vehicle                             |
-| make          | String                    | brand of a vehicle                            |
-| model         | String                    | model of a vehicle                            |
-| type          | boolean                   | true for new, false for used                  |
-| price         | String                    | price of a vehicle                            |
-| exteriorColor | String                    | exterior color                                |
-| interiorColor | String                    | interior color                                |
-| bodyType      | BodyType                  | VAN, SUV, Jeep                                |
-| features      | ArrayList\<String\>       | features of a vehicle                         |
-| miles         | String                    | miles                                         |
-| images        | ArrayList\<VehicleImage\> | images of a vehicle                           |
-| specials      | ArrayList\<Special\>      | specials that may be applicable for a vehicle |
+| Member Name   | Type     | Description                  |
+| ------------- | -------- | ---------------------------- |
+| id            | String   | unique id of a vehicle       |
+| dealerId      | String   | id of a vehicle's dealer     |
+| year          | String   | year of a vehicle            |
+| make          | String   | brand of a vehicle           |
+| model         | String   | model of a vehicle           |
+| type          | boolean  | true for new, false for used |
+| price         | String   | price of a vehicle           |
+| exteriorColor | String   | exterior color               |
+| interiorColor | String   | interior color               |
+| bodyType      | BodyType | VAN, SUV, Jeep               |
+| features      | String   | features of a vehicle        |
+| miles         | String   | miles                        |
 
 Methods : // todo
 

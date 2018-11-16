@@ -1,4 +1,4 @@
-package dao;
+package dto;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -16,10 +16,10 @@ public class Vehicle implements Serializable {
     private BodyType bodyType;
     private ArrayList<String> features;
     private String miles;
-    private ArrayList<VehicleImage> images;
-    private ArrayList<Special> specials;
+//    private ArrayList<VehicleImage> images;
+//    private ArrayList<Special> specials;
 
-    public Vehicle(String id, String dealerName, String year, String make, String model, boolean type, String price, String exteriorColor, String interiorColor, BodyType bodyType, ArrayList<String> features, String miles, ArrayList<VehicleImage> images, ArrayList<Special> specials) {
+    public Vehicle(String id, String dealerName, String year, String make, String model, boolean type, String price, String exteriorColor, String interiorColor, BodyType bodyType, ArrayList<String> features, String miles) {
         this.id = id;
         this.dealerName = dealerName;
         this.year = year;
@@ -32,8 +32,8 @@ public class Vehicle implements Serializable {
         this.bodyType = bodyType;
         this.features = features;
         this.miles = miles;
-        this.images = images;
-        this.specials = specials;
+//        this.images = images;
+//        this.specials = specials;
     }
 
     public String getId() {
@@ -126,22 +126,6 @@ public class Vehicle implements Serializable {
 
     public void setMiles(String miles) {
         this.miles = miles;
-    }
-
-    public ArrayList<VehicleImage> getImages() {
-        return images;
-    }
-
-    public void setImages(ArrayList<VehicleImage> images) {
-        this.images = images;
-    }
-
-    public ArrayList<Special> getSpecials() {
-        return specials;
-    }
-
-    public void setSpecials(ArrayList<Special> specials) {
-        this.specials = specials;
     }
 
     // ---------- Body Type Class -----------

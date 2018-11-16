@@ -1,28 +1,28 @@
-package dao;
+package dto;
 
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.Date;
 
 public class Dealer implements Serializable {
     private String id;
     private String name;
-    private Address address;
-    private ArrayList<Vehicle> vehicles;
-    private ArrayList<Special> specials;
+    private String address1;
+    private String address2;
+    private String city;
+    private String state;
+    private String zip;
 
-    public Dealer(String id, String name, Address address, ArrayList<Vehicle> vehicles, ArrayList<Special> specials) {
-        this.id = id;
+    public Dealer(String name, String address1, String address2, String city, String state, String zip) {
         this.name = name;
-        this.address = address;
-        this.vehicles = vehicles;
-        this.specials = specials;
+        this.address1 = address1;
+        this.address2 = address2;
+        this.city = city;
+        this.state = state;
+        this.zip = zip;
     }
 
     public String getId() {
         return id;
     }
-
 
     public String getName() {
         return name;
@@ -32,45 +32,59 @@ public class Dealer implements Serializable {
         this.name = name;
     }
 
-    public Address getAddress() {
-        return address;
+    public String getAddress1() {
+        return address1;
     }
 
-    public void setAddress(Address address) {
-        this.address = address;
+    public void setAddress1(String address1) {
+        this.address1 = address1;
     }
 
-    public ArrayList<Vehicle> getVehicles() {
-        return vehicles;
+    public String getAddress2() {
+        return address2;
     }
 
-    public void setVehicles(ArrayList<Vehicle> vehicles) {
-        this.vehicles = vehicles;
+    public void setAddress2(String address2) {
+        this.address2 = address2;
     }
 
-    public ArrayList<Special> getSpecials() {
-        return specials;
+    public String getCity() {
+        return city;
     }
 
-    public void setSpecials(ArrayList<Special> specials) {
-        this.specials = specials;
+    public void setCity(String city) {
+        this.city = city;
     }
 
+    public String getState() {
+        return state;
+    }
 
-    // ------------- Address Class -------------------
+    public void setState(String state) {
+        this.state = state;
+    }
+
+    public String getZip() {
+        return zip;
+    }
+
+    public void setZip(String zip) {
+        this.zip = zip;
+    }
+
     public static class Address {
         private String address1;
         private String address2;
         private String city;
         private String state;
-        private String zipCode;
+        private String zip;
 
-        public Address(String address1, String address2, String city, String state, String zipCode) {
+        public Address(String address1, String address2, String city, String state, String zip) {
             this.address1 = address1;
             this.address2 = address2;
             this.city = city;
             this.state = state;
-            this.zipCode = zipCode;
+            this.zip = zip;
         }
 
         public String getAddress1() {
@@ -105,12 +119,12 @@ public class Dealer implements Serializable {
             this.state = state;
         }
 
-        public String getZipCode() {
-            return zipCode;
+        public String getZip() {
+            return zip;
         }
 
-        public void setZipCode(String zipCode) {
-            this.zipCode = zipCode;
+        public void setZip(String zip) {
+            this.zip = zip;
         }
     }
 }
